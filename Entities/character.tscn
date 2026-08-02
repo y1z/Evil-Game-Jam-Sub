@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cva1cobhxtbsg"]
+
+[ext_resource type="Script" uid="uid://byndmt4neotbj" path="res://Scripts/character.gd" id="1_1mlnf"]
+[ext_resource type="Texture2D" uid="uid://kibmxtw32ei8" path="res://Sprites/empty-square-place-holders/empty_square_white_64×64.png" id="1_vrvw4"]
+[ext_resource type="PackedScene" uid="uid://lg7i23a40iiv" path="res://Entities/movement.tscn" id="2_d6e1o"]
+
+[node name="Character" type="Node2D" unique_id=2118010555]
+script = ExtResource("1_1mlnf")
+
+[node name="visual" type="Node2D" parent="." unique_id=85596126]
+
+[node name="Sprite2D" type="Sprite2D" parent="visual" unique_id=2096718536]
+texture = ExtResource("1_vrvw4")
+
+[node name="movement_script" parent="." unique_id=1848397898 instance=ExtResource("2_d6e1o")]
+unique_name_in_owner = true
+hit_box_radius = 30.0
