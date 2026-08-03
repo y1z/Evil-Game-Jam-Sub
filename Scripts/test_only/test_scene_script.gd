@@ -1,9 +1,9 @@
 extends Node2D
 
 @export_category("VARIABLES")
-@export var test_speed:float:
+@export var test_speed: float:
 	set(new_test_speed):
-		test_speed = new_test_speed 
+		test_speed = new_test_speed
 		if test_scene_character != null:
 			test_scene_character.speed = test_speed
 @export var test_custom_pos: Vector2
