@@ -2,7 +2,7 @@
 
 ## Systems
 - [ ] Path-Following 
-- [ ] Movement
+- [x] Movement
 - [ ] Health 
 - [ ] Damage
 - [ ] Traps (add more sub task as need be)
