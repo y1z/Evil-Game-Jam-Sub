@@ -1,12 +1,13 @@
 class_name Movement extends CharacterBody2D
 
 const DEFAULT_SPEED: float = 400.0
+const MINIMUM_SPEED: float = 10.0
 const DEFAULT_MINIMUM_DISTANCE: float = 10.0
 const DEFAULT_MINIMUM_RADIUS: float = 20.0
 
 @export_group("VARIABLES")
 @export var target: Vector2 = self.position
-@export var speed: float = DEFAULT_SPEED
+@export_range(MINIMUM_SPEED, 99999999.0) var speed: float = DEFAULT_SPEED
 @export var should_move: bool = false
 @export_range(DEFAULT_MINIMUM_RADIUS, 9999.0) var hit_box_radius: float
 
@@ -22,6 +23,8 @@ func _ready() -> void:
 		DPrint.d_print_verbose("radius after %s" % circle.radius)
 		circle = collsion_shape.shape as CircleShape2D
 		DPrint.d_print_verbose("one more check %s" % circle.radius)
+	if speed < 10:
+		speed = DEFAULT_SPEED
 
 
 func _physics_process(delta: float) -> void:
@@ -42,3 +45,11 @@ func set_targetv(new_target: Vector2) -> void:
 
 func set_targetn(new_target: Node2D) -> void:
 	set_targetv(new_target.position)
+
+
+func debug_print() -> void:
+	DPrint.d_print("position  = %s " % position)
+	DPrint.d_print("velocity = %s " % velocity)
+	DPrint.d_print("should move = %s " % should_move)
+	DPrint.d_print("target = %s " % target)
+	DPrint.d_print("speed = %s " % speed)

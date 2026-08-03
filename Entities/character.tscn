@@ -7,11 +7,11 @@
 [node name="Character" type="Node2D" unique_id=2118010555]
 script = ExtResource("1_1mlnf")
 
-[node name="visual" type="Node2D" parent="." unique_id=85596126]
-
-[node name="Sprite2D" type="Sprite2D" parent="visual" unique_id=2096718536]
-texture = ExtResource("1_vrvw4")
-
 [node name="movement_script" parent="." unique_id=1848397898 instance=ExtResource("2_d6e1o")]
 unique_name_in_owner = true
 hit_box_radius = 30.0
+
+[node name="visual" type="Node2D" parent="movement_script" unique_id=85596126]
+
+[node name="Sprite2D" type="Sprite2D" parent="movement_script/visual" unique_id=2096718536]
+texture = ExtResource("1_vrvw4")
